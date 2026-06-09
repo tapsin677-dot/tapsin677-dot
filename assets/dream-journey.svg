@@ -1,1 +1,64 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
 
+<style>
+.bg { fill:#0d1117; }
+.road { stroke:#58a6ff; stroke-width:8; stroke-dasharray:12 8; fill:none; }
+.node { fill:#161b22; stroke:#58a6ff; stroke-width:3; }
+.label { fill:white; font-family:Arial,sans-serif; font-size:18px; }
+.title { fill:#58a6ff; font-family:Arial,sans-serif; font-size:30px; font-weight:bold; }
+
+.avatar {
+animation: move 15s linear infinite;
+}
+
+@keyframes move {
+0% { transform: translate(0px,0px); }
+20% { transform: translate(220px,0px); }
+40% { transform: translate(440px,0px); }
+60% { transform: translate(660px,0px); }
+80% { transform: translate(880px,0px); }
+100% { transform: translate(1100px,0px); }
+}
+
+.glow {
+animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+from { filter: drop-shadow(0 0 2px #58a6ff);}
+to { filter: drop-shadow(0 0 15px #58a6ff);}
+}
+</style>
+
+<rect width="1200" height="300" class="bg"/>
+
+<text x="600" y="50" text-anchor="middle" class="title">
+🌙 DREAM JOURNEY OF A YOUNG CEO
+</text>
+
+<path d="M100 180 L1100 180" class="road"/>
+
+<circle cx="100" cy="180" r="25" class="node glow"/>
+<text x="100" y="230" text-anchor="middle" class="label">🏠 Dream</text>
+
+<circle cx="300" cy="180" r="25" class="node glow"/>
+<text x="300" y="230" text-anchor="middle" class="label">📚 Learn</text>
+
+<circle cx="500" cy="180" r="25" class="node glow"/>
+<text x="500" y="230" text-anchor="middle" class="label">💻 Code</text>
+
+<circle cx="700" cy="180" r="25" class="node glow"/>
+<text x="700" y="230" text-anchor="middle" class="label">🚀 Build</text>
+
+<circle cx="900" cy="180" r="25" class="node glow"/>
+<text x="900" y="230" text-anchor="middle" class="label">👑 CEO</text>
+
+<circle cx="1100" cy="180" r="25" class="node glow"/>
+<text x="1100" y="230" text-anchor="middle" class="label">🌍 Weekmotion</text>
+
+<g class="avatar">
+<circle cx="70" cy="145" r="18" fill="#f0f6fc"/>
+<rect x="60" y="160" width="20" height="25" fill="#58a6ff"/>
+</g>
+
+</svg>
