@@ -1,1 +1,32 @@
 
+name: Generate Datas
+
+on:
+  schedule: # প্রতি ১২ ঘণ্টা পর পর আপডেট হবে
+    - cron: "* */12 * * *"
+  workflow_dispatch: # আপনি চাইলে ম্যানুয়ালিও রান করতে পারবেন
+  push:
+    branches:
+    - main # আপনার ডিফল্ট ব্রাঞ্চের নাম main না হয়ে master হলে পরিবর্তন করে দিন
+
+jobs:
+  build:
+    name: Jobs to update datas
+    runs-on: ubuntu-latest
+    steps:
+      # Snake Animation তৈরি করার অ্যাকশন
+      - uses: Platane/snk@v3
+        id: snake-gif
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # জেনারেট হওয়া ফাইলটি 'output' নামের একটি ব্রাঞ্চে পুশ করা
+      - uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
